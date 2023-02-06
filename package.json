@@ -1,0 +1,24 @@
+{
+  "name": "splitscript.https",
+  "version": "0.0.0",
+  "description": "promise based https client for node",
+  "main": "./src/methods.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infrared-studio/splitscript.http.git"
+  },
+  "keywords": [
+    "http",
+    "async",
+    "splitscript"
+  ],
+  "author": "ultraviolet@infrared_studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infrared-studio/splitscript.http/issues"
+  },
+  "homepage": "https://github.com/infrared-studio/splitscript.http#readme"
+}
