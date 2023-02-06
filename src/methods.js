@@ -1,5 +1,4 @@
 const https = require('node:https');
-const { Stream } = require('node:stream');
 const toQuery = require('./toQuery.js');
 module.exports = {
 	/**
@@ -11,7 +10,7 @@ module.exports = {
 			const request = https.request(options, (res) => {
 				let data = '';
 				res.on('data', (chunk) => (data += chunk));
-				res.on('close', () => resolve(data));
+				res.on('close', () => resolve(JSON.parse(data)));
 			});
 			request.on('error', (err) => reject(err));
 			request.end();
@@ -21,7 +20,7 @@ module.exports = {
 	 * Send a GET request
 	 * @param      {string}       url       URL to send request to
 	 * @param      {object}       params    URL Parameters to send. Must be plain object
-	 * @param      {?object}       options   additional config for the request. E.g: headers
+	 * @param      {?object}      options   additional config for the request. E.g: headers
 	 */
 	get: function (url, params, options) {
 		return new Promise((resolve, reject) => {
@@ -33,7 +32,7 @@ module.exports = {
 				(res) => {
 					let data = '';
 					res.on('data', (chunk) => (data += chunk));
-					res.on('close', () => resolve(data));
+					res.on('close', () => resolve(JSON.parse(data)));
 				}
 			);
 			request.on('error', (err) => reject(err));
