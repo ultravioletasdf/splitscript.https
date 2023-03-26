@@ -1,10 +1,9 @@
-module.exports = function (obj) {
+export default function (obj: object) {
 	const queryString = Object.entries(obj)
 		.map(([key, val]) => {
-			let stringified =
-				typeof val === 'object' ? JSON.stringify(val) : val;
+			let stringified = JSON.stringify(val);
 			return `${key}=${encodeURIComponent(stringified)}`;
 		})
 		.join('&');
 	return '?' + queryString;
-};
+}

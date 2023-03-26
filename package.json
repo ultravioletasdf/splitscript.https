@@ -1,10 +1,21 @@
 {
   "name": "splitscript.https",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "promise based https client for node",
-  "main": "./src/methods.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && fixup",
+		"test": "ava"  
   },
   "repository": {
     "type": "git",
@@ -20,5 +31,9 @@
   "bugs": {
     "url": "https://github.com/infrared-studio/splitscript.http/issues"
   },
-  "homepage": "https://github.com/infrared-studio/splitscript.http#readme"
+  "homepage": "https://github.com/infrared-studio/splitscript.http#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "ava": "^5.2.0"
+  }
 }
