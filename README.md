@@ -6,9 +6,8 @@
 # SplitScript.https
 
 Promise based module for sending https requests
-<a href="https://splitscript.js.org/docs/https" >
-<img src="https://i.imgur.com/xUQ8o9P.png" height="75px" style="margin-top:15px;">
-</a>
+
+[<img src="https://i.imgur.com/xUQ8o9P.png" height="75px" style="margin-top:15px;">](https://splitscript.js.org/docs/https")
 
 <div style="display:inline;">
 <a href="https://discord.gg/WJySJ7HdrZ"><img src="https://img.shields.io/discord/1033343718494847007?color=5865F2&logo=discord&logoColor=white"></a>

@@ -1,8 +1,10 @@
 import * as https from 'node:https';
 import * as _toQuery from './toQuery.js';
+import { RequestOptions } from 'node:https';
+
 const toQuery = _toQuery.default;
 /** Send a HTTPS request */
-export async function request(options: object) {
+export async function request(options: RequestOptions) {
 	return new Promise((resolve, reject) => {
 		const request = https.request(options, (res) => {
 			let data = '';
@@ -23,7 +25,7 @@ export async function request(options: object) {
 export async function get(
 	url: string,
 	params?: object,
-	options?: object | null
+	options?: RequestOptions | null
 ) {
 	return new Promise((resolve, reject) => {
 		if (typeof params === 'object') url += toQuery(params); // Add optional query params
@@ -48,7 +50,11 @@ export async function get(
 	});
 }
 /** Send a POST request */
-export async function post(url: string, data?: any, options?: object | null) {
+export async function post(
+	url: string,
+	data?: any,
+	options?: RequestOptions | null
+) {
 	return new Promise((resolve, reject) => {
 		const request = https.request(
 			url,
@@ -75,7 +81,11 @@ export async function post(url: string, data?: any, options?: object | null) {
 	});
 }
 /** Send a PUT request*/
-export async function put(url: string, data?: any, options?: object | null) {
+export async function put(
+	url: string,
+	data?: any,
+	options?: RequestOptions | null
+) {
 	return new Promise((resolve, reject) => {
 		const request = https.request(
 			url,
@@ -102,7 +112,7 @@ export async function put(url: string, data?: any, options?: object | null) {
 	});
 }
 /** Send a PATCH request */
-export async function patch(url: string, data?: any, options?: object) {
+export async function patch(url: string, data?: any, options?: RequestOptions) {
 	return new Promise((resolve, reject) => {
 		const request = https.request(
 			url,
@@ -128,7 +138,7 @@ export async function patch(url: string, data?: any, options?: object) {
 	});
 }
 /** Send a DELETE request */
-async function _delete(url: string, options?: object) {
+async function _delete(url: string, options?: RequestOptions) {
 	return new Promise((resolve, reject) => {
 		const request = https.request(
 			url,
