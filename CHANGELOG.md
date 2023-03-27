@@ -1,3 +1,7 @@
+# 1.0.4
+
+CHANGELOG.md included in package.json `files`
+
 # 1.0.3
 
 added typedefs for request options
