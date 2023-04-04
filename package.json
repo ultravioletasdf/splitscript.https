@@ -1,6 +1,6 @@
 {
   "name": "splitscript.https",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "promise based https client for node",
   "main": "dist/cjs/index.js",
   "module": "dist/mjs/index.js",

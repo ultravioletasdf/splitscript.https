@@ -150,7 +150,11 @@ async function _delete(url: string, options?: RequestOptions) {
 					data += chunk;
 				});
 				res.on('close', () => {
-					resolve(JSON.parse(data));
+					try {
+						resolve(JSON.parse(data));
+					} catch (e) {
+						resolve(data);
+					}
 				});
 			}
 		);
