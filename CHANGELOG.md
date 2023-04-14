@@ -1,3 +1,7 @@
+# 1.0.7
+
+Better imports
+
 # 1.0.4
 
 CHANGELOG.md included in package.json `files`

@@ -1,8 +1,7 @@
 import * as https from 'node:https';
-import * as _toQuery from './toQuery.js';
+import toQuery from './toQuery.js';
 import { RequestOptions } from 'node:https';
 
-const toQuery = _toQuery.default;
 /** Send a HTTPS request */
 export async function request(options: RequestOptions) {
 	return new Promise((resolve, reject) => {
